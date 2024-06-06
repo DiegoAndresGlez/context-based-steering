@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://fdpnanppw4ga"]
+
+[ext_resource type="PackedScene" uid="uid://cue8ug6iu5pwh" path="res://enemy.tscn" id="1_d8q15"]
+[ext_resource type="PackedScene" uid="uid://r2lf6lrm1c20" path="res://wall.tscn" id="2_vs8n4"]
+[ext_resource type="PackedScene" uid="uid://c6d57kotrr215" path="res://target.tscn" id="3_gr585"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_d8q15")]
+
+[node name="Wall" parent="." instance=ExtResource("2_vs8n4")]
+position = Vector2(656, 216)
+scale = Vector2(3.54673, 3.68)
+
+[node name="Wall2" parent="." instance=ExtResource("2_vs8n4")]
+position = Vector2(489, 134)
+scale = Vector2(3.54673, 3.68)
+
+[node name="Wall3" parent="." instance=ExtResource("2_vs8n4")]
+position = Vector2(285, 316)
+scale = Vector2(3.54673, 3.68)
+
+[node name="Wall4" parent="." instance=ExtResource("2_vs8n4")]
+position = Vector2(687, 526)
+scale = Vector2(3.54673, 3.68)
+
+[node name="Wall5" parent="." instance=ExtResource("2_vs8n4")]
+position = Vector2(457, 512)
+scale = Vector2(3.54673, 3.68)
+
+[node name="Wall6" parent="." instance=ExtResource("2_vs8n4")]
+position = Vector2(875, 305)
+scale = Vector2(3.54673, 3.68)
+
+[node name="Target" parent="." instance=ExtResource("3_gr585")]
+position = Vector2(151, 240)
