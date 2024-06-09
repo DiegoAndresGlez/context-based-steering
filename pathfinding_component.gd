@@ -21,13 +21,17 @@ var target_dir := Vector2.ZERO
 var velocity := Vector2.ZERO
 var acceleration := Vector2.ZERO
 
+"""
+Target can be any object with a global_position property such as a CharacterBody2D, StaticObject2D, etc.
+"""
+
 func _ready():
 	print(target)
 	interest.resize(num_rays)
 	danger.resize(num_rays)
 	ray_directions.resize(num_rays)
 	for i in num_rays:
-		var angle = i * 2 * PI / num_rays # radians
+		var angle = i * 2 * PI / num_rays # rotates 45 degrees, representing each raycast from PathfindingComponent
 		ray_directions[i] = Vector2.DOWN.rotated(angle) # from bottom ray and clockwise 
 	timer.start()
 
@@ -50,7 +54,6 @@ func _physics_process(_delta):
 	set_danger()
 	choose_direction()
 
-	# TODO add pathfinding
 	var desired_velocity = chosen_dir.rotated(actor.rotation) * max_speed
 	actor.velocity = actor.velocity.lerp(desired_velocity, steer_force)
 	nav.velocity = actor.velocity
