@@ -1,31 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://fdpnanppw4ga"]
+[gd_scene load_steps=5 format=3 uid="uid://fdpnanppw4ga"]
 
 [ext_resource type="PackedScene" uid="uid://cue8ug6iu5pwh" path="res://enemy.tscn" id="1_d8q15"]
 [ext_resource type="PackedScene" uid="uid://r2lf6lrm1c20" path="res://wall.tscn" id="2_vs8n4"]
 [ext_resource type="PackedScene" uid="uid://c6d57kotrr215" path="res://target.tscn" id="3_gr585"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_3d02e"]
+vertices = PackedVector2Array(556, 600, 1150, 651, 1, 651, 431, 600, 533, 232, 596, 278, 627, 370, 556, 471, 431, 472, 381, 430, 380, 301, 407, 232, 748, 500, 625, 503, 817, 367, 938, 367, 748, 370, 1150, 2, 938, 239, 721, 150, 816, 240, 720, 278, 595, 150, 533, 103, 256, 430, -1, 0, 255, 302, 407, 101)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8, 9, 10, 11), PackedInt32Array(12, 1, 0, 13), PackedInt32Array(14, 15, 1, 12, 16), PackedInt32Array(13, 0, 7, 6), PackedInt32Array(17, 1, 15, 18), PackedInt32Array(19, 17, 18, 20), PackedInt32Array(21, 19, 20, 14, 16), PackedInt32Array(22, 5, 4, 23), PackedInt32Array(21, 16, 6, 5), PackedInt32Array(9, 8, 3, 2, 24), PackedInt32Array(24, 2, 25, 26), PackedInt32Array(11, 10, 26, 25, 27), PackedInt32Array(27, 25, 17, 23), PackedInt32Array(23, 17, 19, 22)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1, 0, 1150, 2, 1150, 651, 1, 651), PackedVector2Array(816, 240, 817, 367, 938, 367, 938, 239), PackedVector2Array(431, 472, 431, 600, 556, 600, 556, 471), PackedVector2Array(407, 101, 407, 232, 533, 232, 533, 103), PackedVector2Array(255, 302, 256, 430, 381, 430, 380, 301), PackedVector2Array(595, 150, 596, 278, 720, 278, 721, 150), PackedVector2Array(627, 370, 625, 503, 748, 500, 748, 370)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
 [node name="Main" type="Node2D"]
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_3d02e")
+
 [node name="Enemy" parent="." instance=ExtResource("1_d8q15")]
+position = Vector2(1017, 306)
 
 [node name="Wall" parent="." instance=ExtResource("2_vs8n4")]
 position = Vector2(656, 216)
 scale = Vector2(3.54673, 3.68)
 
 [node name="Wall2" parent="." instance=ExtResource("2_vs8n4")]
-position = Vector2(489, 134)
+position = Vector2(468, 168)
 scale = Vector2(3.54673, 3.68)
 
 [node name="Wall3" parent="." instance=ExtResource("2_vs8n4")]
-position = Vector2(285, 316)
+position = Vector2(316, 367)
 scale = Vector2(3.54673, 3.68)
 
 [node name="Wall4" parent="." instance=ExtResource("2_vs8n4")]
-position = Vector2(687, 526)
+position = Vector2(686, 438)
 scale = Vector2(3.54673, 3.68)
 
 [node name="Wall5" parent="." instance=ExtResource("2_vs8n4")]
-position = Vector2(457, 512)
+position = Vector2(492, 537)
 scale = Vector2(3.54673, 3.68)
 
 [node name="Wall6" parent="." instance=ExtResource("2_vs8n4")]
@@ -33,4 +44,4 @@ position = Vector2(875, 305)
 scale = Vector2(3.54673, 3.68)
 
 [node name="Target" parent="." instance=ExtResource("3_gr585")]
-position = Vector2(151, 240)
+position = Vector2(253, 126)
