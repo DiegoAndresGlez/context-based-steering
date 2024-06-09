@@ -23,6 +23,10 @@ var acceleration := Vector2.ZERO
 
 """
 Target can be any object with a global_position property such as a CharacterBody2D, StaticObject2D, etc.
+This PathfindingComponent can be used for a simple context based steering agent that uses raycasts to determine the best direction to move an actor towards the target.
+It also uses a NavigationAgent2D to get the best next path position to the target.
+
+It is useful for simple AI agents that need to move towards a target while avoiding obstacles in a life-like way.
 """
 
 func _ready():
